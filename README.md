@@ -44,7 +44,7 @@ docker run -d \
   --net="host" \
   --pid="host" \
   -v "/:/host:ro,rslave" \
-  quay.io/prometheus/node-exporter:latest \
+  docker-node-exporter-astra \
   --path.rootfs=/host
 ```
 
@@ -56,7 +56,7 @@ version: '3.8'
 
 services:
   node_exporter:
-    image: quay.io/prometheus/node-exporter:latest
+    image: docker-node-exporter-astra
     container_name: node_exporter
     command:
       - '--path.rootfs=/host'
